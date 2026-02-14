@@ -1,0 +1,38 @@
+name: Plugin Register
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  register:
+    name: Register Plugins to Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout plugin repository
+        uses: actions/checkout@v4
+
+      - name: Checkout CLI repository
+        uses: actions/checkout@v4
+        with:
+          repository: ljysoftware/simple_chat_plugin_cli
+          ref: dev
+          path: cli
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Register plugins
+        env:
+          PLUGIN_REPO_OWNER: ${{ github.repository_owner }}
+          PLUGIN_REPO_NAME: ${{ github.event.repository.name }}
+          PLUGIN_REPO_BRANCH: main
+          API_URL: https://simple-chat-plugin-server.onrender.com/plugins
+        run: python cli/scripts/register-plugins.py
