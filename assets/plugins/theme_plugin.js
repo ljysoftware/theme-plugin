@@ -6,8 +6,6 @@ function onLoad() {
         options: [
           { label: 'Light', value: 'light' },
           { label: 'Dark', value: 'dark' },
-          { label: 'Pink', value: 'pink' },
-          { label: 'Green', value: 'green' },
         ],
         callback: 'setTheme',
       });
