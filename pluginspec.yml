@@ -1,6 +1,6 @@
 plugins:
   - name: theme_plugin
-    version: 1.0.0
+    version: 1.0.1
     assets:
       - assets/plugins/theme_plugin.js
     description: Light/Dark theme switcher for Simple Chat.
