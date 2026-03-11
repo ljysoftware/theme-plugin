@@ -18,15 +18,5 @@ function onLoad() {
   return {
     name: 'Theme Plugin',
     version: '1.0',
-    ui: {
-      toolbarButtons: [
-        {
-          id: 'themeButton',
-          label: 'Theme',
-          icon: 'palette',
-          action: 'openThemePicker',
-        },
-      ],
-    },
   };
 }
