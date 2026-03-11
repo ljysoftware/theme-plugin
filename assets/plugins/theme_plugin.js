@@ -6,8 +6,5 @@ function onLoad() {
   return {
     name: 'Theme Plugin',
     version: '1.0',
-    ui: {
-      toolbarButtons: [],
-    },
   };
 }
