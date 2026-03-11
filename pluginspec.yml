@@ -3,4 +3,4 @@ plugins:
     version: 1.0.0
     assets:
       - assets/plugins/theme_plugin.js
-    description: Light/Dark/Pink/Green theme switcher for Simple Chat.
+    description: Light/Dark theme switcher for Simple Chat.
